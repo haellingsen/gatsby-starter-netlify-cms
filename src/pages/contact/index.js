@@ -31,6 +31,9 @@ export default class Index extends React.Component {
     })
       .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
+    fetch("/.netlify/functions/hello")
+      .then(response => response.json())
+      .then(console.log)
   }
 
   render() {
